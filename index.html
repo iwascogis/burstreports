@@ -77,6 +77,19 @@
               });
 
               wmsLayer.addTo(map);
+        
+        //HTML title
+         var title = new L.Control();
+            title.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+            title.update = function () {
+                this._div.innerHTML = '<h2 style="color:blue;">BURST REPORT MAP MAP</h2>';
+            };
+            title.addTo(map);
+
     
         //Overlay grouped layers    
         var groupOverLays = {
